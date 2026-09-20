@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Nexus Holidays</title>
+  <meta name="description" content="Reach a Nexus Holidays travel specialist directly, or send us your trip details." />
+  <meta name="theme-color" content="#01173c" />
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter+Tight:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <main class="nx-site nx-contact">
+    <header class="nx-nav">
+      <div class="nx-nav__inner">
+        <a href="index.html" class="nx-nav__brand" aria-label="Nexus Holidays home">
+          <img src="assets/logo-lockup.png" alt="Nexus Holidays" />
+        </a>
+        <nav class="nx-nav__links" aria-label="Primary">
+          <a href="index.html#bespoke">Bespoke Holidays</a>
+          <a href="index.html#destinations">Destinations</a>
+          <a href="index.html#why-us">Why Nexus</a>
+        </nav>
+        <div style="display:flex; align-items:center; gap:14px;">
+          <a class="cta-pill" href="contact.html"><span>Contact Now</span></a>
+          <button type="button" class="nx-nav__burger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="nx-nav__mobile">
+        <a href="index.html#bespoke">Bespoke Holidays</a>
+        <a href="index.html#destinations">Destinations</a>
+        <a href="index.html#why-us">Why Nexus</a>
+        <a class="cta-pill" href="contact.html"><span>Contact Now</span></a>
+      </div>
+    </header>
+
+    <section class="contact-hero">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3I7oktfELrYq5ptET2i2xFrfTSZ/hf_20260919_230141_3e8bec02-4e45-4709-9f68-c4b8c80fbe2c.png" alt="" aria-hidden="true" />
+      <div class="contact-hero__scrim"></div>
+      <div class="contact-hero__copy">
+        <p class="eyebrow">Get in touch</p>
+        <h1>Let's plan your next trip</h1>
+        <p>Reach us directly, or send the details and a specialist will take it from there.</p>
+      </div>
+    </section>
+
+    <section class="contact-body">
+      <div class="contact-direct">
+        <h2>Contact directly</h2>
+        <p>Prefer to write straight to us? Reach a Nexus Holidays specialist by email and we'll pick up the conversation from there.</p>
+        <a class="email-reveal" href="mailto:adelevate803@gmail.com">
+          <span class="email-reveal__label">Email Us Directly</span>
+          <span class="email-reveal__address">adelevate803@gmail.com</span>
+        </a>
+        <p class="contact-note">We reply within one business day.</p>
+      </div>
+
+      <div class="contact-form-card">
+        <h2>Send us your trip details</h2>
+        <form id="contact-form" class="nx-form">
+          <div class="nx-form__row">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" required minlength="2" maxlength="120" />
+          </div>
+          <div class="nx-form__row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required maxlength="200" />
+          </div>
+          <div class="nx-form__grid">
+            <div class="nx-form__row">
+              <label for="phone">Phone (optional)</label>
+              <input id="phone" name="phone" type="tel" maxlength="40" />
+            </div>
+            <div class="nx-form__row">
+              <label for="destination">Destination (optional)</label>
+              <input id="destination" name="destination" type="text" maxlength="120" placeholder="Dubai, Santorini, undecided" />
+            </div>
+          </div>
+          <div class="nx-form__row">
+            <label for="travelDates">Travel dates (optional)</label>
+            <input id="travelDates" name="travelDates" type="text" maxlength="120" placeholder="e.g. mid June, 2 weeks" />
+          </div>
+          <div class="nx-form__row">
+            <label for="message">Tell us about the trip</label>
+            <textarea id="message" name="message" required minlength="10" maxlength="4000" rows="5"></textarea>
+          </div>
+          <p class="nx-form__error" id="form-error" style="display:none;"></p>
+          <button type="submit" class="stamp-submit">Send Message</button>
+        </form>
+        <div class="form-done" id="form-done">
+          <p class="form-done-title">Opening your email app</p>
+          <p class="form-done-body">We've pre-filled a message to Nexus Holidays with your trip details — just hit send in your email app to reach us. A specialist will reply within one business day.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <img src="assets/logo-lockup.png" alt="Nexus Holidays" />
+          <p>Global destinations. Unforgettable memories.</p>
+        </div>
+        <nav class="footer__links" aria-label="Footer">
+          <a href="index.html#bespoke">Bespoke Holidays</a>
+          <a href="index.html#destinations">Destinations</a>
+          <a href="index.html#why-us">Why Nexus</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="footer__contact">
+          <p class="eyebrow">Get in touch</p>
+          <a href="mailto:adelevate803@gmail.com">Email us directly</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>Nexus Holidays</span>
+        <span>All trips are subject to availability</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="assets/main.js"></script>
+  <script>
+    (function () {
+      const form = document.getElementById("contact-form");
+      const errorEl = document.getElementById("form-error");
+      const doneEl = document.getElementById("form-done");
+      if (!form) return;
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        errorEl.style.display = "none";
+
+        const data = new FormData(form);
+        const name = String(data.get("name") || "").trim();
+        const email = String(data.get("email") || "").trim();
+        const message = String(data.get("message") || "").trim();
+        const phone = String(data.get("phone") || "").trim();
+        const destination = String(data.get("destination") || "").trim();
+        const travelDates = String(data.get("travelDates") || "").trim();
+
+        const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (name.length < 2) {
+          errorEl.textContent = "Please enter your full name.";
+          errorEl.style.display = "block";
+          return;
+        }
+        if (!emailRe.test(email)) {
+          errorEl.textContent = "Please enter a valid email address.";
+          errorEl.style.display = "block";
+          return;
+        }
+        if (message.length < 10) {
+          errorEl.textContent = "Tell us a little more about your trip (at least 10 characters).";
+          errorEl.style.display = "block";
+          return;
+        }
+
+        const bodyLines = [
+          "New trip enquiry from the Nexus Holidays website:",
+          "",
+          "Name: " + name,
+          "Email: " + email,
+          phone ? "Phone: " + phone : null,
+          destination ? "Destination: " + destination : null,
+          travelDates ? "Travel dates: " + travelDates : null,
+          "",
+          "Message:",
+          message,
+        ].filter(Boolean).join("\n");
+
+        const mailto =
+          "mailto:adelevate803@gmail.com" +
+          "?subject=" + encodeURIComponent("Trip enquiry from " + name) +
+          "&body=" + encodeURIComponent(bodyLines);
+
+        window.location.href = mailto;
+        form.style.display = "none";
+        doneEl.classList.add("is-visible");
+      });
+    })();
+  </script>
+</body>
+</html>
