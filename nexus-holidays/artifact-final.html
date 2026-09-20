@@ -90,6 +90,13 @@
   .pill span { position: relative; z-index: 1; transition: color .3s ease; }
   .pill:hover span, .pill:focus-visible span { color: var(--navy-deep); }
 
+  /* ---------- quick contact (top) ---------- */
+  .top-contact { position: relative; z-index: 5; background: var(--navy-soft); padding-block: 16px; margin-top: 66px; }
+  .top-contact__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+  .top-contact__line { font-size: 13.5px; color: var(--ink-muted); margin: 4px 0 0; max-width: 46ch; }
+  .top-contact__actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  @media (max-width: 620px) { .top-contact .pill { display: none; } }
+
   /* ---------- journey (illustrated scroll panels) ---------- */
   .journey { position: relative; }
   .chapter {
@@ -137,6 +144,56 @@
   .dome::after { content: ""; position: absolute; top: -22%; left: 50%; width: 34%; height: 34%; transform: translateX(-50%); border-radius: 50%; background: #1c4d8f; }
   .wave { position: absolute; left: -10%; right: -10%; height: 3px; background: rgba(255,255,255,.3); border-radius: 999px; }
   .sun-glow { position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(248,207,90,.9), rgba(248,207,90,0) 70%); }
+  .eiffel {
+    position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+    width: 110px; height: 230px;
+    background: #061224;
+    clip-path: polygon(48% 0%, 52% 0%, 62% 22%, 58% 22%, 74% 55%, 66% 55%, 84% 82%, 16% 82%, 34% 55%, 26% 55%, 42% 22%, 38% 22%);
+  }
+  .eiffel::before {
+    content: "";
+    position: absolute; bottom: 0; left: 0; right: 0; height: 20%;
+    background: #061224;
+    clip-path: polygon(0% 100%, 100% 100%, 62% 0%, 38% 0%);
+  }
+
+  /* ---------- cabin framing for chapter 1 ---------- */
+  .cabin-ambient { background: linear-gradient(180deg, #050a16 0%, #0a1428 55%, #0d1f3d 100%); }
+  .cabin-seat {
+    position: absolute; bottom: -8%; width: 24%; max-width: 210px; height: 48%;
+    background: linear-gradient(180deg, #060c1a, #0b1830);
+    border-radius: 46px 46px 14px 14px;
+    box-shadow: inset 0 0 50px rgba(0,0,0,.5);
+    z-index: 1;
+    transition: opacity .1s linear, transform .1s linear;
+  }
+  .cabin-seat::before {
+    content: "";
+    position: absolute; top: -13%; left: 50%; width: 68%; height: 28%;
+    transform: translateX(-50%);
+    background: inherit;
+    border-radius: 50% 50% 16px 16px;
+  }
+  .cabin-seat--left { left: -5%; }
+  .cabin-seat--right { right: -5%; }
+  .window-frame {
+    position: absolute;
+    left: 62%; top: 50%;
+    width: 48%; max-width: 360px; aspect-ratio: 3 / 4;
+    transform: translate(-50%, -50%) scale(1);
+    transform-origin: center;
+    border-radius: 48%;
+    overflow: hidden;
+    border: 14px solid #0d1f3d;
+    box-shadow: 0 0 0 4px rgba(255,255,255,.07), 0 30px 70px rgba(0,0,0,.55);
+    z-index: 2;
+    transition: transform .1s linear;
+  }
+  .window-frame .chapter__scene { inset: -30%; position: absolute; }
+  @media (max-width: 720px) {
+    .window-frame { left: 50%; width: 62%; max-width: 280px; }
+    .cabin-seat { width: 30%; }
+  }
 
   /* ---------- shared reveal ---------- */
   .reveal { transform: translate3d(0, 34px, 0) rotateX(5deg); transition: transform .8s cubic-bezier(.16,1,.3,1); }
@@ -169,7 +226,7 @@
   .destinations { max-width: 1160px; margin: 0 auto; padding-block: 90px; }
   .destinations h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 600; margin-bottom: 36px; }
   .tickets { display: grid; gap: 16px; grid-template-columns: 1fr; }
-  @media (min-width: 720px) { .tickets { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 720px) { .tickets { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); } }
   .ticket {
     position: relative;
     background: var(--navy);
@@ -293,9 +350,10 @@
   @media (min-width: 760px) { footer .wrap { grid-template-columns: 1.4fr 1fr 1fr; } }
 
   @media (prefers-reduced-motion: reduce) {
-    .reveal, .reveal--left, .reveal--right, .reveal--scale, .chapter__copy, .chapter__scene, .pill::before, .pill span, .ticket, .ticket__explore, .stamp, .submit-stamp, .email-reveal span {
+    .reveal, .reveal--left, .reveal--right, .reveal--scale, .chapter__copy, .chapter__scene, .pill::before, .pill span, .ticket, .ticket__explore, .stamp, .submit-stamp, .email-reveal span, .window-frame, .cabin-seat {
       transition: none !important;
     }
+    .window-frame { transform: translate(-50%, -50%) scale(1) !important; }
     .marquee__track { animation: none; flex-wrap: wrap; width: 100%; justify-content: center; }
   }
 </style>
@@ -316,20 +374,40 @@
   </div>
 </header>
 
+<section class="top-contact reveal is-in">
+  <div class="wrap top-contact__inner">
+    <div>
+      <p class="eyebrow">Plan with us</p>
+      <p class="top-contact__line">Already know where you're going? Talk to a Nexus specialist today, or scroll the journey below.</p>
+    </div>
+    <div class="top-contact__actions">
+      <a class="email-reveal" href="mailto:adelevate803@gmail.com">
+        <span class="lbl">Email Us Directly</span>
+        <span>adelevate803@gmail.com</span>
+      </a>
+      <a class="pill" href="#contact"><span>Contact Now</span></a>
+    </div>
+  </div>
+</section>
+
 <main id="top">
   <section class="journey">
-    <div class="chapter chapter--1">
-      <div class="chapter__scene scene-1" data-depth="0.15">
-        <div class="cloud" style="width:220px;height:70px;top:22%;left:8%;"></div>
-        <div class="cloud" style="width:160px;height:50px;top:14%;left:52%;opacity:.7;"></div>
-        <div class="cloud" style="width:260px;height:80px;top:34%;left:60%;"></div>
-        <div class="cloud" style="width:140px;height:44px;top:44%;left:20%;opacity:.6;"></div>
+    <div class="chapter chapter--1 cabin-ambient">
+      <div class="cabin-seat cabin-seat--left"></div>
+      <div class="cabin-seat cabin-seat--right"></div>
+      <div class="window-frame" data-window>
+        <div class="chapter__scene scene-1" data-depth="0.15">
+          <div class="cloud" style="width:220px;height:70px;top:22%;left:8%;"></div>
+          <div class="cloud" style="width:160px;height:50px;top:14%;left:52%;opacity:.7;"></div>
+          <div class="cloud" style="width:260px;height:80px;top:34%;left:60%;"></div>
+          <div class="cloud" style="width:140px;height:44px;top:44%;left:20%;opacity:.6;"></div>
+        </div>
       </div>
       <div class="wrap">
         <div class="chapter__copy is-in">
           <p class="chapter__kicker">Departure</p>
           <h2 class="chapter__title">Every window seat starts a story</h2>
-          <p class="chapter__body">Fasten in. Nexus Holidays turns take off into the first chapter of your holiday, all the way down to the beach below.</p>
+          <p class="chapter__body">Fasten in. Nexus Holidays turns take off into the first chapter of your holiday. Keep scrolling and we fly straight through the window, all the way down to the beach below.</p>
           <ul class="chapter__tags"><li>Private check in</li><li>Priority boarding</li></ul>
         </div>
       </div>
@@ -370,7 +448,26 @@
       </div>
     </div>
 
-    <div class="chapter chapter--4 chapter--right">
+    <div class="chapter chapter--paris chapter--right">
+      <div class="chapter__scene scene-3" data-depth="0.15">
+        <div class="eiffel"></div>
+        <div class="sun-glow" style="width:260px;height:260px;left:44%;bottom:6%;opacity:.7;"></div>
+        <div class="skyline" style="height:16%;">
+          <i style="height:60%;width:5%;"></i><i style="height:40%;width:6%;"></i><i style="height:75%;width:5%;"></i>
+          <i style="height:50%;width:7%;"></i><i style="height:35%;width:5%;"></i><i style="height:65%;width:6%;"></i>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="chapter__copy">
+          <p class="chapter__kicker">Destination 03</p>
+          <h2 class="chapter__title">A landmark for every ending</h2>
+          <p class="chapter__body">Evening lights along the Seine, a table booked with the tower in view. Some cities you visit, this one you fall for.</p>
+          <ul class="chapter__tags"><li>River view dining</li><li>Private evening tours</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter chapter--4">
       <div class="chapter__scene scene-4" data-depth="0.15">
         <div class="dome" style="width:120px;height:70px;left:10%;"></div>
         <div class="dome" style="width:90px;height:52px;left:24%;"></div>
@@ -379,7 +476,7 @@
       </div>
       <div class="wrap">
         <div class="chapter__copy">
-          <p class="chapter__kicker">Destination 03</p>
+          <p class="chapter__kicker">Destination 04</p>
           <h2 class="chapter__title">The postcard, made real</h2>
           <p class="chapter__body">Cliffside sunsets over the Aegean, held for you at the exact table with the view.</p>
           <ul class="chapter__tags"><li>Cliffside suites</li><li>Private sunset dining</li></ul>
@@ -426,6 +523,12 @@
         <div class="ticket__row"><span class="ticket__code">JTR</span><span class="ticket__seq">03</span></div>
         <span class="ticket__name">Santorini</span>
         <span class="ticket__note">Cliffside suites, Aegean sunsets</span>
+        <span class="ticket__explore">Explore →</span>
+      </a>
+      <a href="#contact" class="ticket reveal reveal--scale" style="transition-delay:240ms">
+        <div class="ticket__row"><span class="ticket__code">CDG</span><span class="ticket__seq">04</span></div>
+        <span class="ticket__name">Paris</span>
+        <span class="ticket__note">River view dining, evening tours</span>
         <span class="ticket__explore">Explore →</span>
       </a>
     </div>
@@ -569,17 +672,29 @@
 
   if (!reduced()) {
     var scenes = document.querySelectorAll(".chapter__scene");
+    var windowEl = document.querySelector("[data-window]");
+    var cabinSeats = document.querySelectorAll(".cabin-seat");
     var raf = 0;
     function updateParallax() {
       raf = 0;
       var vh = window.innerHeight || 1;
       scenes.forEach(function (el) {
-        var rect = el.parentElement.getBoundingClientRect();
+        var host = windowEl && windowEl.contains(el) ? windowEl.parentElement : el.parentElement;
+        var rect = host.getBoundingClientRect();
         var center = rect.top + rect.height / 2;
         var progress = Math.max(-1, Math.min(1, (center - vh / 2) / vh));
         var depth = parseFloat(el.dataset.depth || "0.15");
         el.style.transform = "translateY(" + (progress * 60 * depth * 6.5).toFixed(1) + "px)";
       });
+
+      if (windowEl) {
+        var chapterRect = windowEl.closest(".chapter").getBoundingClientRect();
+        var flyProgress = Math.max(0, Math.min(1, -chapterRect.top / (chapterRect.height * 0.85) + 0.15));
+        var scale = 1 + flyProgress * 4.2;
+        windowEl.style.transform = "translate(-50%, -50%) scale(" + scale.toFixed(3) + ")";
+        var fade = Math.max(0, 1 - flyProgress * 1.6);
+        cabinSeats.forEach(function (seat) { seat.style.opacity = fade; });
+      }
     }
     window.addEventListener("scroll", function () { if (!raf) raf = requestAnimationFrame(updateParallax); }, { passive: true });
     window.addEventListener("resize", updateParallax);

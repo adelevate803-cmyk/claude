@@ -802,3 +802,52 @@ h1, h2, h3 {
   }
   .marquee__track { animation: none; flex-wrap: wrap; width: 100%; justify-content: center; }
 }
+
+/* ============================================================
+   Quick contact strip (top of homepage)
+   ============================================================ */
+.top-contact {
+  position: relative;
+  z-index: 5;
+  background: var(--navy-soft);
+  padding-block: 16px;
+  margin-top: 68px;
+}
+.top-contact__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-inline: 24px;
+}
+.top-contact__line {
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  margin: 4px 0 0;
+  max-width: 46ch;
+}
+.top-contact__actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.email-reveal-mini {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--gold-bright);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.email-reveal-mini:hover {
+  border-color: var(--gold-bright);
+}
+@media (max-width: 620px) {
+  .top-contact .cta-pill {
+    display: none;
+  }
+}
