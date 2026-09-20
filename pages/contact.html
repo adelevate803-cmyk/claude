@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact Nexus Holidays — Talk to a Travel Designer</title>
+<meta name="description" content="Get in touch with Nexus Holidays directly, or send us your trip details and a travel designer will reply within one business day." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/contact.css">
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <a href="../index.html" class="brand">
+    <span class="plane-mark">&#9992;</span>
+    <span>NEXUS<span class="sub">HOLIDAYS</span></span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html#beach">Destinations</a></li>
+    <li><a href="../index.html#bespoke">Bespoke Holidays</a></li>
+    <li><a href="../index.html#about">About Us</a></li>
+    <li><a href="contact.html" class="btn btn-gold">Contact Now</a></li>
+  </ul>
+</nav>
+
+<header class="contact-hero">
+  <video class="contact-hero-bg" autoplay muted loop playsinline preload="none" poster="https://d8j0ntlcm91z4.cloudfront.net/user_3I7oktfELrYq5ptET2i2xFrfTSZ/hf_20260920_143623_80a2ae49-c465-469c-93b1-29970188110b.png">
+    <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3I7oktfELrYq5ptET2i2xFrfTSZ/hf_20260920_145243_83e5440c-8612-4fff-8f1d-b363fc26686d.mp4" type="video/mp4">
+  </video>
+  <div class="contact-hero-content">
+    <span class="eyebrow">We'd Love To Hear From You</span>
+    <h1>Let's Start Planning</h1>
+    <p>Reach us directly, or send over your trip details below &mdash; a Nexus travel designer replies within one business day.</p>
+  </div>
+</header>
+
+<section class="contact-body">
+  <div class="container contact-grid">
+
+    <!-- ============ Direct contact card ============ -->
+    <div class="contact-card contact-direct">
+      <span class="eyebrow">Contact Us Directly</span>
+      <h2>Speak To The Team</h2>
+      <p class="muted">Prefer to talk it through? Reach us any of these ways and we'll pick it up from there.</p>
+
+      <ul class="direct-list">
+        <li>
+          <span class="direct-icon">&#128222;</span>
+          <div>
+            <strong>Call Us</strong>
+            <a href="tel:+15551234567">+1 (555) 123-4567</a>
+          </div>
+        </li>
+        <li>
+          <span class="direct-icon">&#9993;</span>
+          <div>
+            <strong>Email Us</strong>
+            <a href="mailto:hello@nexusholidays.com">hello@nexusholidays.com</a>
+          </div>
+        </li>
+        <li>
+          <span class="direct-icon">&#128172;</span>
+          <div>
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/15551234567" target="_blank" rel="noopener">Message us on WhatsApp</a>
+          </div>
+        </li>
+        <li>
+          <span class="direct-icon">&#128205;</span>
+          <div>
+            <strong>Office</strong>
+            <span>123 Voyager Avenue, Suite 400, New York, NY 10001</span>
+          </div>
+        </li>
+        <li>
+          <span class="direct-icon">&#128337;</span>
+          <div>
+            <strong>Hours</strong>
+            <span>Mon&ndash;Fri, 9am&ndash;7pm &bull; Sat, 10am&ndash;4pm</span>
+          </div>
+        </li>
+      </ul>
+
+      <div class="direct-note">
+        <em>Placeholder contact details &mdash; swap in your real phone, email, WhatsApp number and address before launch.</em>
+      </div>
+    </div>
+
+    <!-- ============ Contact form ============ -->
+    <div class="contact-card contact-form-wrap">
+      <span class="eyebrow">Send Us A Message</span>
+      <h2>Tell Us About Your Trip</h2>
+      <p class="muted">Fill this out and it's sent straight to our team &mdash; no account needed.</p>
+
+      <form id="contactForm" class="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="fullName">Full Name *</label>
+            <input type="text" id="fullName" name="fullName" required autocomplete="name" />
+          </div>
+          <div class="form-field">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required autocomplete="email" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" />
+          </div>
+          <div class="form-field">
+            <label for="destination">Destination Interest</label>
+            <select id="destination" name="destination">
+              <option value="">Select a destination</option>
+              <option value="Dubai">Dubai</option>
+              <option value="Maldives">Maldives</option>
+              <option value="Paris">Paris</option>
+              <option value="Santorini">Santorini</option>
+              <option value="Bespoke / Not sure yet">Bespoke / Not sure yet</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="travelDates">Preferred Travel Dates</label>
+            <input type="text" id="travelDates" name="travelDates" placeholder="e.g. March 2027, flexible" />
+          </div>
+          <div class="form-field">
+            <label for="travellers">Number of Travellers</label>
+            <input type="number" id="travellers" name="travellers" min="1" placeholder="2" />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="message">Tell Us More *</label>
+          <textarea id="message" name="message" rows="5" required placeholder="What are you dreaming up? Budget, occasion, must-haves &mdash; anything helps us design your trip."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-gold form-submit">
+          <span class="btn-label">Send Message</span>
+        </button>
+
+        <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+
+        <p class="form-fallback">
+          Having trouble? Email us directly at
+          <a href="mailto:hello@nexusholidays.com">hello@nexusholidays.com</a>.
+        </p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Nexus Holidays</h4>
+        <p>Global destinations, unforgettable memories. Bespoke luxury travel, planned by people who've been there.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="../index.html#beach">Destinations</a></li>
+          <li><a href="../index.html#bespoke">Bespoke Holidays</a></li>
+          <li><a href="../index.html#about">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get In Touch</h4>
+        <ul>
+          <li><a href="contact.html">Contact Now</a></li>
+          <li><a href="mailto:hello@nexusholidays.com">hello@nexusholidays.com</a></li>
+          <li><a href="tel:+15551234567">+1 (555) 123-4567</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; <span id="year"></span> Nexus Holidays. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/main.js"></script>
+<script src="../js/contact.js"></script>
+</body>
+</html>
