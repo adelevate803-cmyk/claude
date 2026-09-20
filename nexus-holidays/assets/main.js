@@ -4,6 +4,35 @@ function prefersReducedMotion() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
+/* ---------- Smooth inertial scrolling (Lenis) ----------
+   Lenis animates the real scrollTop (not a virtual/transformed layer), so
+   native `scroll` events keep firing and every rect-based calculation below
+   (journey scrub, reveal, parallax) keeps working unmodified. */
+let lenis = null;
+function initSmoothScroll() {
+  if (prefersReducedMotion() || typeof window.Lenis === "undefined") return null;
+  lenis = new window.Lenis({
+    autoRaf: true,
+    duration: 1.05,
+    smoothWheel: true,
+    wheelMultiplier: 1,
+    touchMultiplier: 1.1,
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", (event) => {
+      const id = a.getAttribute("href");
+      if (!id || id === "#") return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      event.preventDefault();
+      lenis.scrollTo(target, { offset: -24, duration: 1.2 });
+    });
+  });
+
+  return lenis;
+}
+
 /* ---------- Mobile nav ---------- */
 function initNav() {
   const burger = document.querySelector(".nx-nav__burger");
@@ -161,6 +190,7 @@ function initJourney() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  initSmoothScroll();
   initNav();
   initReveal();
   initParallax();
