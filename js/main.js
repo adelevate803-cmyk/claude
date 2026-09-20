@@ -74,7 +74,8 @@ document.documentElement.classList.remove('no-js');
       const media = scene.querySelector('.scene-media');
       if (media && media.classList.contains('in-view')) {
         const drift = (progress - 1) * 14; // -14px .. 14px
-        media.style.transform = `scale(1.02) translateY(${drift}px) translateZ(0)`;
+        const tilt = (progress - 1) * 3; // -3deg .. 3deg
+        media.style.transform = `scale(1.02) translateY(${drift}px) rotateX(${tilt}deg) translateZ(0)`;
       }
     });
     ticking = false;

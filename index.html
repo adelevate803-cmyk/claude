@@ -32,6 +32,7 @@
       <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3I7oktfELrYq5ptET2i2xFrfTSZ/hf_20260920_143627_9f87f23c-a011-4345-9c86-f6e50ac4ef7f.mp4" type="video/mp4">
     </video>
   </div>
+  <canvas id="hero3d" class="hero3d" aria-hidden="true"></canvas>
   <div class="window-frame"></div>
   <div class="hero-content">
     <span class="eyebrow">Global Destinations &bull; Unforgettable Memories</span>
@@ -87,7 +88,9 @@
 </section>
 
 <section class="scene" id="santorini">
-  <img class="scene-media" src="https://d8j0ntlcm91z4.cloudfront.net/user_3I7oktfELrYq5ptET2i2xFrfTSZ/hf_20260920_143623_ec1b5bfe-a03e-49a4-9868-db11446ea6ca.png" alt="Santorini white and blue buildings over the Aegean Sea" loading="lazy" />
+  <video class="scene-media" autoplay muted loop playsinline preload="none" poster="https://d8j0ntlcm91z4.cloudfront.net/user_3I7oktfELrYq5ptET2i2xFrfTSZ/hf_20260920_143623_ec1b5bfe-a03e-49a4-9868-db11446ea6ca.png">
+    <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3I7oktfELrYq5ptET2i2xFrfTSZ/hf_20260920_145243_d8151f45-c491-4c7c-bffc-4daa00a21339.mp4" type="video/mp4">
+  </video>
   <div class="scene-content">
     <span class="eyebrow">Destination</span>
     <h2>Santorini, Greece</h2>
@@ -196,6 +199,8 @@
 </footer>
 
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/hero3d.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
