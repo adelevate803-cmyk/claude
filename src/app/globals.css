@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  * {
+    @apply border-gold-soft/20;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-velvet text-cream font-body antialiased;
+  }
+
+  ::selection {
+    @apply bg-gold-champagne text-velvet;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-light text-gold-champagne;
+  }
+}
+
+@layer components {
+  .label-text {
+    @apply font-label uppercase tracking-label text-xs text-gold-soft;
+  }
+
+  .gold-divider {
+    @apply flex items-center justify-center gap-4 text-gold-soft;
+  }
+
+  .gold-divider::before,
+  .gold-divider::after {
+    content: "";
+    @apply h-px w-16 flex-1 max-w-24 bg-gradient-to-r from-transparent via-gold-soft/70 to-gold-soft/70 sm:max-w-32;
+  }
+
+  .gold-divider::after {
+    @apply bg-gradient-to-l;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-gold-champagne/80 bg-gold-champagne px-8 py-3 font-label text-xs uppercase tracking-label text-velvet transition-all duration-300 ease-velvet-in-out hover:bg-transparent hover:text-gold-champagne;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-gold-champagne/60 bg-transparent px-8 py-3 font-label text-xs uppercase tracking-label text-gold-champagne transition-all duration-300 ease-velvet-in-out hover:border-gold-champagne hover:bg-gold-champagne/10;
+  }
+
+  .section-pad {
+    @apply px-6 py-24 sm:px-10 sm:py-32 lg:px-16;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-gold-soft/30 bg-velvet px-4 py-3 text-cream placeholder:text-cream/30 outline-none transition-colors duration-300 focus:border-gold-champagne;
+  }
+}
+
+/* Reduced-motion: strip scroll-linked and long transitions site-wide */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
