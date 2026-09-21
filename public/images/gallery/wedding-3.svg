@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 900" width="700" height="900">
+  <defs>
+    <radialGradient id="bg-gal2" cx="50%" cy="35%" r="80%">
+      <stop offset="0%" stop-color="#4A0F1D"/>
+      <stop offset="100%" stop-color="#2B0A12"/>
+    </radialGradient>
+    <linearGradient id="line-gal2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E6C9A0" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#E6C9A0" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#E6C9A0" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="700" height="900" fill="url(#bg-gal2)"/>
+  <circle cx="0.0" cy="40.0" r="1.2" fill="#E6C9A0" opacity="0.15"/>
+  <circle cx="137.5" cy="131.3" r="1.7999999999999998" fill="#E6C9A0" opacity="0.23"/>
+  <circle cx="275.0" cy="222.6" r="2.4" fill="#E6C9A0" opacity="0.31"/>
+  <circle cx="412.5" cy="313.9" r="3" fill="#E6C9A0" opacity="0.39"/>
+  <circle cx="550.0" cy="405.2" r="1.2" fill="#E6C9A0" opacity="0.47"/>
+  <circle cx="687.5" cy="496.5" r="1.7999999999999998" fill="#E6C9A0" opacity="0.15"/>
+  <circle cx="125.0" cy="587.8" r="2.4" fill="#E6C9A0" opacity="0.23"/>
+  <circle cx="262.5" cy="679.1" r="3" fill="#E6C9A0" opacity="0.31"/>
+  <circle cx="400.0" cy="770.4" r="1.2" fill="#E6C9A0" opacity="0.39"/>
+  <circle cx="537.5" cy="861.7" r="1.7999999999999998" fill="#E6C9A0" opacity="0.47"/>
+  <circle cx="675.0" cy="53.0" r="2.4" fill="#E6C9A0" opacity="0.15"/>
+  <circle cx="112.5" cy="144.3" r="3" fill="#E6C9A0" opacity="0.23"/>
+  <circle cx="250.0" cy="235.6" r="1.2" fill="#E6C9A0" opacity="0.31"/>
+  <circle cx="387.5" cy="326.9" r="1.7999999999999998" fill="#E6C9A0" opacity="0.39"/>
+  <g transform="translate(350 432)" text-anchor="middle">
+    <rect x="-34" y="-34" width="68" height="68" rx="34" fill="none" stroke="#E6C9A0" stroke-width="1.5" opacity="0.7"/>
+    <rect x="-9" y="-9" width="18" height="18" fill="#E6C9A0" opacity="0.85" transform="rotate(45)"/>
+    <line x1="-160" y1="0" x2="-52" y2="0" stroke="url(#line-gal2)" stroke-width="1.5"/>
+    <line x1="52" y1="0" x2="160" y2="0" stroke="url(#line-gal2)" stroke-width="1.5"/>
+  </g>
+  <text x="350" y="506" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="32" fill="#F6EEE3" letter-spacing="1">Wedding</text>
+  <text x="350" y="552" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" letter-spacing="3" fill="#C9A56B" opacity="0.85">PLACEHOLDER — REPLACE WITH PHOTO</text>
+</svg>
